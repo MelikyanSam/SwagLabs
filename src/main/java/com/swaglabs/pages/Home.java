@@ -30,6 +30,11 @@ public class Home extends BasePage {
     @FindBy(css = (".shopping_cart_link"))
     private WebElement shoppingCart;
 
+    @FindBy(className = "select_container")
+    private WebElement selectContainer;
+
+
+
     public Home() {
         super();
         PageFactory.initElements(driver, this);
@@ -55,10 +60,16 @@ public class Home extends BasePage {
         click(imgBtn);
     }
 
+    public void selectContainer(){
+        click(selectContainer);
+    }
+
     public ShoppngCart shoppingCart(){
         click(shoppingCart);
         return new ShoppngCart(driver);
     }
+
+
 
     @Override
     public void load() {

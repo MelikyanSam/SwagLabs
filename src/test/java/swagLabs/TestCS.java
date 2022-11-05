@@ -1,5 +1,6 @@
 package swagLabs;
 
+import com.swaglabs.pages.About;
 import com.swaglabs.pages.Product;
 import com.swaglabs.pages.shoppingCart.ChackoutOverview;
 import com.swaglabs.pages.shoppingCart.Checkout;
@@ -79,6 +80,52 @@ public class TestCS extends BaseTest {
         product.load();
         Assert.assertTrue(product.isBackToProductsVisible());
 
+    }
+
+    @Test
+    public void menuBar(){
+        LogIn loginSwagLabs = new LogIn(driver);
+        Home home = loginSwagLabs.logIn();
+        home.load();
+        home.menuBtn();
+        Assert.assertTrue(home.isallItemsVisible());
+    }
+
+    @Test
+    public void about_menu(){
+        LogIn loginSwagLabs = new LogIn(driver);
+        Home home = loginSwagLabs.logIn();
+        home.load();
+        home.menuBtn();
+        About about = home.about_menu();
+
+        Assert.assertEquals(about.getURL(), "https://saucelabs.com/");
+    }
+
+    @Test
+    public void logOut_menu(){
+        LogIn loginSwagLabs = new LogIn(driver);
+        Home home = loginSwagLabs.logIn();
+        home.load();
+        home.menuBtn();
+        LogIn logOut = home.logOut_menu();
+
+        Assert.assertEquals(logOut.getURL(), "https://www.saucedemo.com");
+    }
+
+    @Test
+    public void allItems_menu(){
+        LogIn loginSwagLabs = new LogIn(driver);
+        Home home = loginSwagLabs.logIn();
+        home.load();
+        Product product = home.nameBtn();
+        home = product.allItems_menu();
+
+        Assert.assertEquals(
+                home.getTitle(),
+                "PRODUCTS",
+                "The title is not valid"
+        );
     }
 
 

@@ -58,6 +58,11 @@ public class LogIn extends LoadableComponent<LogIn> {
         return getText(errorMsg);
     }
 
+    public String getURL(){
+        return driver.getCurrentUrl();
+    }
+
+
     @Override
     public void load() {
         driver.get("https://www.saucedemo.com");

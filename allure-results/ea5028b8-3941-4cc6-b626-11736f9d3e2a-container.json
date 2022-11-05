@@ -1,0 +1,1 @@
+{"uuid":"ea5028b8-3941-4cc6-b626-11736f9d3e2a","name":"swagLabs.BaseTest.setUp","children":["48a828cd-019a-451d-a97c-bcd8550ea181"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1661250556211,"stop":1661250563409}],"afters":[],"start":1661250556207,"stop":1661250563411}
